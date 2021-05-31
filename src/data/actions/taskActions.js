@@ -13,6 +13,6 @@ export const timeoutShowTask = (task) => (dispatch) => {
         type: CLOSE_TASK,
         isModalOpen: false,
       }),
-    2500
+    3000
   );
 };
