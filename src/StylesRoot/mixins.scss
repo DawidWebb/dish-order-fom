@@ -4,6 +4,13 @@
   position: relative;
   width: 90vw;
   margin: 20px auto;
+
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    max-width: 70vw;
+  }
+  @media screen and (min-width: map-get($breakpoints, x-large)) {
+    max-width: 40vw;
+  }
 }
 
 @mixin smallButton {

@@ -33,7 +33,9 @@ const From = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}></div>
+      <div className={styles.title}>
+        <h2>Formularz zamówień</h2>
+      </div>
       <div className={styles.form}>
         <Form
           onSubmit={onSubmit}
@@ -70,8 +72,9 @@ const From = () => {
                 <Field name="typeOfDish" validate={required}>
                   {({ input, meta }) => (
                     <div>
+                      <label>wybierz danie</label>
                       <select {...input}>
-                        <option>wybierz danie</option>
+                        <option></option>
                         <option value="pizza">pizza</option>
                         <option value="soup">zupa</option>
                         <option value="sandwich">kanapka</option>
@@ -102,8 +105,8 @@ const From = () => {
                           <input
                             type="range"
                             min="25"
-                            max="150"
-                            step="1"
+                            max="155"
+                            step="10"
                             {...input}
                           />
                           <pre>{values.rangeOfSize} cm</pre>
@@ -128,9 +131,10 @@ const From = () => {
                             min="1"
                             max="10"
                             step="1"
+                            value="1"
                             {...input}
                           />
-                          <pre>{values.spicinesScale}</pre>
+                          <pre>{values.spicinesScale} </pre>
                           {meta.error && meta.touched && (
                             <span>{meta.error}</span>
                           )}
@@ -160,7 +164,15 @@ const From = () => {
                 )}
               </div>
               <div className={styles.operationButtons}>
-                <Button type="submit" disabled={submitting} name="podgląd" />
+                <button
+                  type="button"
+                  onClick={form.reset}
+                  disabled={submitting || pristine}
+                  className={styles.resetButton}
+                >
+                  reset
+                </button>
+                <Button type="submit" disabled={submitting} name="wyślij" />
               </div>
             </form>
           )}

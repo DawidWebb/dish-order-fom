@@ -1,0 +1,66 @@
+@import "../../StylesRoot/common.scss";
+
+.wrapper {
+  @include wrapper;
+  border: 1px solid $first-color;
+  border-radius: 5px;
+  padding: 20px;
+  .title {
+    color: $fifth-color;
+    text-align: center;
+  }
+  .form {
+    .basicSelect,
+    .specialSelect {
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px;
+        label {
+          color: $third-color;
+        }
+        input {
+          @include inputViev;
+        }
+        pre {
+          font-weight: 700;
+          color: $fifth-color;
+        }
+        span {
+          @include validateMessage;
+        }
+        select {
+          @include inputViev;
+          option {
+            @include inputViev;
+          }
+        }
+      }
+    }
+    .specialSelect {
+      div {
+        input {
+          width: 140px;
+        }
+      }
+    }
+    .operationButtons {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px;
+      button {
+        @include smallButton;
+      }
+      button:nth-child(1) {
+        background-color: $text-first-color;
+        color: $text-second-color;
+        border: 1px solid $text-second-color;
+        &:hover {
+          color: $text-first-color;
+          background-color: $text-warring-color;
+        }
+      }
+    }
+  }
+}

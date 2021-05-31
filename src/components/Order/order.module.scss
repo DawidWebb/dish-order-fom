@@ -1,0 +1,56 @@
+@import "../../StylesRoot/common.scss";
+.wrapper {
+  @include wrapper;
+  .title {
+    color: $fifth-color;
+    text-align: center;
+  }
+  .orders {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    .order {
+      margin: 10px auto;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $first-color;
+      border-radius: 5px;
+      padding: 10px;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .button {
+        margin: 20px auto;
+        width: 705;
+        button {
+          @include smallButton;
+          width: 100%;
+        }
+      }
+      .details {
+        width: 100%;
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          p {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      .order {
+        flex-basis: 49%;
+      }
+    }
+  }
+}
